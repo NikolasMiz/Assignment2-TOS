@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC
+        "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN" "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+
+    <module name="TreeWalker">
+        <module name="LineLength"/>
+        <module name="BooleanExpressionComplexity">
+            <property name="max" value="4"/>
+        </module>
+        <module name="CyclomaticComplexity">
+            <property name="max" value="12"/>
+        </module>
+        <module name="LineLength"/>
+        <module name="MethodLength"/>
+        <module name="EmptyCatchBlock"/>
+        <module name="AvoidStarImport"/>
+        <module name="IllegalImport"/>
+        <module name="NeedBraces"/>
+    </module>
+
+    <module name="FileLength"/>
+    <module name="FileTabCharacter"/>
+
+    <module name="Header">
+        <property name="header" value="////////////////////////////////////////////////////////////////////\n// Nicholas Miazzo 1161392\n////////////////////////////////////////////////////////////////////" />
+        <property name="fileExtensions" value="java"/>
+    </module>
+    
+</module>
