@@ -19,6 +19,8 @@ public class TakeAwayBillImpl implements TakeAwayBill {
         if(itemsOrdered.size() == 0) {
             throw new IllegalArgumentException("ItemsOrder is empty");
         }
+
+        // Controllo limite items
         if(itemsOrdered.size() > 30) {
             throw new TakeAwayBillException();
         }
