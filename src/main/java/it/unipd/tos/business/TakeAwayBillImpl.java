@@ -24,9 +24,26 @@ public class TakeAwayBillImpl implements TakeAwayBill {
         }
 
         double result = 0;
+        int nSandwich = 0;
+        MenuItem cheapestSandwich = null;
+
         for (MenuItem m : itemsOrdered) {
             result += m.getPrice();
+
+            if(m.getItemType() == MenuItem.ItemType.PANINO) {
+                nSandwich++;
+                if(cheapestSandwich == null ||
+                        cheapestSandwich.getPrice() > m.getPrice()) {
+                    cheapestSandwich = m;
+                }
+            }
         }
+
+        // Calcolo sconto > 5 panini
+        if(nSandwich > 5) {
+            result -= cheapestSandwich.getPrice() * 0.5D;
+        }
+
         return result;
     }
 }
