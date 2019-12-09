@@ -15,7 +15,7 @@ public class MenuItemTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void test_constructorInvalidItemTypeParam() {
+    public void test_constructorNullItemTypeParam() {
         new MenuItem(null, "Vegetariano", 10D);
     }
 
@@ -25,13 +25,13 @@ public class MenuItemTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void test_constructor0LenNameParam() {
+    public void test_constructorZeroLengthNameParam() {
         new MenuItem(MenuItem.ItemType.BEVANDA, "", 4D);
     }
 
 
     @Test(expected = IllegalArgumentException.class)
-    public void test_constructorInvalidPriceParam() {
+    public void test_constructorNegativePriceParam() {
         new MenuItem(MenuItem.ItemType.BEVANDA, "Coca cola", -2D);
     }
 
