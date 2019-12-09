@@ -51,6 +51,12 @@ public class TakeAwayBillImpl implements TakeAwayBill {
             result -= result * 0.1D;
         }
 
+        // Commissione
+        if(result < 10D) {
+            result += 0.5D;
+        }
+
+
         return result;
     }
 }
