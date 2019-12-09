@@ -44,6 +44,11 @@ public class TakeAwayBillImpl implements TakeAwayBill {
             result -= cheapestSandwich.getPrice() * 0.5D;
         }
 
+        // Applicazione sconto totale > 50 euro
+        if(result > 50D) {
+            result -= result * 0.1D;
+        }
+
         return result;
     }
 }
