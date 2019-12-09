@@ -15,23 +15,23 @@ public class MenuItemTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testInvalidItemTypeParam() {
+    public void test_constructorInvalidItemTypeParam() {
         new MenuItem(null, "Vegetariano", 10D);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testNullNameParam() {
+    public void test_constructorNullNameParam() {
         new MenuItem(MenuItem.ItemType.BEVANDA, null, 4D);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void test0LenNameParam() {
+    public void test_constructor0LenNameParam() {
         new MenuItem(MenuItem.ItemType.BEVANDA, "", 4D);
     }
 
 
     @Test(expected = IllegalArgumentException.class)
-    public void testInvalidPriceParam() {
+    public void test_constructorInvalidPriceParam() {
         new MenuItem(MenuItem.ItemType.BEVANDA, "Coca cola", -2D);
     }
 
